@@ -1,0 +1,31 @@
+name: Release workflow
+
+on:
+  push:
+    tags: 'r*'
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt install wget zip
+
+      - name: Install 'just'
+        uses: actions-rs/install@v0.1
+        with:
+          crate: just
+          version: 1.6.0
+
+      - name: Build
+        run: |
+          mkdir build
+          just -d build --justfile justfile
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/Chimera.zip

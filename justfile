@@ -7,7 +7,7 @@ wsldl_url := 'https://github.com/yuk7/wsldl/releases/download' / wsldl_revision 
 default: zip
 
 _fetch url output:
-    wget --output-document {{ output }} {{ url }}
+    wget --no-verbose --output-document {{ output }} {{ url }}
 
 fetch: (_fetch chimera_rootfs_url 'rootfs.tar.gz') (_fetch wsldl_url 'chimera.exe')
 

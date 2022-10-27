@@ -29,3 +29,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/Chimera.zip
+          generate_release_notes: true

@@ -6,14 +6,16 @@ wsldl_url := 'https://github.com/yuk7/wsldl/releases/download' / wsldl_revision 
 
 default: zip
 
-_fetch url output:
+[private]
+fetch-file url output:
     wget --no-verbose --output-document {{ output }} {{ url }}
 
-fetch: (_fetch chimera_rootfs_url 'rootfs.tar.gz') (_fetch wsldl_url 'chimera.exe')
+fetch: (fetch-file chimera_rootfs_url 'rootfs.tar.gz') (fetch-file wsldl_url 'chimera.exe')
 
-_prepare-ziproot: fetch
+[private]
+prepare-ziproot: fetch
     mkdir ziproot
     cp rootfs.tar.gz chimera.exe ziproot/
 
-zip: _prepare-ziproot
+zip: prepare-ziproot
     cd ziproot && zip ../Chimera.zip *

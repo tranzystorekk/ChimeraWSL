@@ -22,7 +22,7 @@ Dependencies:
 
 - `wget`
 - `zip`
-- [`just`](https://github.com/casey/just)
+- [`just`](https://github.com/casey/just) >= `1.9.0`
 
 The releases are built from the `justfile`. Run the following:
 

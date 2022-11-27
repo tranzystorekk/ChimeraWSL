@@ -15,10 +15,9 @@ jobs:
         run: sudo apt install wget zip
 
       - name: Install 'just'
-        uses: actions-rs/install@v0.1
+        uses: taiki-e/install-action@v1
         with:
-          crate: just
-          version: 1.6.0
+          tool: just@1.9.0
 
       - name: Build
         run: |

@@ -24,8 +24,14 @@ jobs:
           mkdir build
           just -d build --justfile justfile
 
+      - name: Compute checksum
+        run: sha256sum -b Chimera.zip > Chimera.zip.sha256
+        working-directory: ./build
+
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          files: build/Chimera.zip
+          files: |
+            build/Chimera.zip
+            build/Chimera.zip.sha256
           generate_release_notes: true

@@ -1,4 +1,4 @@
-chimera_revision := '20221012'
+chimera_revision := '20230611'
 chimera_rootfs_url := 'https://repo.chimera-linux.org/live' / chimera_revision / 'chimera-linux-x86_64-ROOTFS-' + chimera_revision + '-core.tar.gz'
 
 wsldl_revision := '22020900'

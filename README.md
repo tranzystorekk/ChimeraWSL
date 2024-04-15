@@ -20,7 +20,7 @@ Refer to the [wsldl usage reference](https://github.com/yuk7/wsldl#how-to-usefor
 
 Dependencies:
 
-- `wget`
+- `curl`
 - `zip`
 - [`just`](https://github.com/casey/just) >= `1.9.0`
 

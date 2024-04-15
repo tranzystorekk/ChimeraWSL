@@ -8,7 +8,7 @@ default: zip
 
 [private]
 fetch-file url output:
-    wget --no-verbose --output-document {{ output }} {{ url }}
+    curl --no-progress-meter --location --output {{ output }} {{ url }}
 
 fetch: (fetch-file chimera_rootfs_url 'rootfs.tar.gz') (fetch-file wsldl_url 'chimera.exe')
 

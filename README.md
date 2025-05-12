@@ -7,8 +7,8 @@
 ## Installing
 
 1. [Download](https://github.com/tranzystorek-io/ChimeraWSL/releases/latest) installer zip
-2. Extract all files in zip file to same directory
-3. Run `chimera.exe` to extract rootfs and register to WSL
+1. Extract all files in zip file to same directory
+1. Run `chimera.exe` to extract rootfs and register to WSL
 
 Exe filename is used as WSL instance name - you can rename it to create multiple installations.
 
